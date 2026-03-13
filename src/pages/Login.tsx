@@ -57,6 +57,17 @@ export default function Login({ onLogin, onGoRegister }: Props) {
             <button onClick={onGoRegister} className="text-accent hover:underline">Create account</button>
             <button onClick={quickDemo} className="text-muted-foreground hover:underline">Quick Demo</button>
           </div>
+
+          <button
+            onClick={() => {
+              setToken('demo-token');
+              setUser({ name: 'Demo Farmer', email: 'demo@voicebot.in', state: 'Maharashtra' });
+              onLogin();
+            }}
+            className="mt-6 w-full h-12 rounded-xl border border-border text-foreground font-medium transition-all duration-200 hover:bg-muted"
+          >
+            Skip to App →
+          </button>
         </div>
       </div>
       <AuthDecorPanel />
